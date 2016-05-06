@@ -34,7 +34,7 @@
               <%= link_to "All", root_path %>
             </li>
             <% Category.all.each do |c| %>
-              <li>
+              <li class="<%= 'active' if params[:category] == c.name %>">
                 <%= link_to c.name, books_path(category: c.name) %>
               </li>
             <% end %>
