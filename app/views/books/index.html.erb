@@ -3,7 +3,12 @@
 <% if @books.count == 0 %>
   <h4>No Book</h4>
 <% else %>
-  <% @books.each do |book| %>
-    <h2><%= link_to book.title, book_path(book) %></h2>
-  <% end %>
+  <div class="row">
+    <% @books.each do |book| %>
+      <div class="col-md-3">
+        <%= image_tag book.book_img, class: "book" %>
+        <h2><%= link_to book.title, book_path(book) %></h2>
+      </div>
+    <% end %>
+  </div>
 <% end %>
